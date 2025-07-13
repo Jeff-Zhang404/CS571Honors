@@ -1,10 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+// src/main.jsx
 
-createRoot(document.getElementById('root')).render(
+import React from "react";
+import ReactDOM from "react-dom/client";
+import './index.css';
+import BadgerTransRouter from './components/nav/BadgerTransRouter.jsx'
 
-    <App />
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <BadgerTransRouter />
+);
 
-)
