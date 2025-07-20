@@ -1,0 +1,487 @@
+[
+  {
+    "courseName": "Composition I",
+    "courseCode": "ENGL 103",
+    "equivalent": "ENG 101 - English Composition",
+    "institution": "Madison Area Technical College",
+    "city": "Madison",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Communication A"]
+  },
+  {
+    "courseName": "Composition II",
+    "courseCode": "ENGL 104",
+    "equivalent": "ENG 102 - English Composition II",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Communication A"]
+  },
+  {
+    "courseName": "British Literature",
+    "courseCode": "ENGL 250",
+    "equivalent": "elective",
+    "institution": "Madison Area Technical College",
+    "city": "Madison",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Literature", "Humanities"]
+  },
+  {
+    "courseName": "U.S. History I",
+    "courseCode": "HIST 110",
+    "equivalent": "HIST 202 - U.S. History since 1877",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Social Science", "Humanities"]
+  },
+  {
+    "courseName": "General Physics I",
+    "courseCode": "PHYS 201",
+    "equivalent": "PHYS 207 - University Physics: Mechanics",
+    "institution": "Milwaukee Area Technical College",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Natural Science", "Physical Science"]
+  },
+  {
+    "courseName": "General Biology II",
+    "courseCode": "BIOL 151",
+    "equivalent": "BIOL 102 - Introductory Biology II",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Natural Science", "Biological Science"]
+  },
+  {
+    "courseName": "Calculus I",
+    "courseCode": "MATH 220",
+    "equivalent": "MATH 221 - Calculus I",
+    "institution": "Waukesha County Technical College",
+    "city": "Pewaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Basic Math and Stats"]
+  },
+  {
+    "courseName": "Introduction to Programming",
+    "courseCode": "CS 101",
+    "equivalent": "CS 124 - Programming Fundamentals",
+    "institution": "Madison Area Technical College",
+    "city": "Madison",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Programming"]
+  },
+  {
+    "courseName": "Art Appreciation",
+    "courseCode": "ART 101",
+    "equivalent": "ART 100 - Art Fundamentals",
+    "institution": "Milwaukee Area Technical College",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Humanities"]
+  },
+  {
+    "courseName": "General Chemistry II",
+    "courseCode": "CHEM 104",
+    "equivalent": "CHEM 108 - Introductory Chemistry II",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Natural Science", "Physical Science"]
+  },
+  {
+    "courseName": "Introduction to Statistics",
+    "courseCode": "STAT 101",
+    "equivalent": "STAT 101 - Elementary Statistics",
+    "institution": "Waukesha County Technical College",
+    "city": "Pewaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Basic Math and Stats"]
+  },
+  {
+    "courseName": "Elementary Spanish II",
+    "courseCode": "SPAN 102",
+    "equivalent": "elective",
+    "institution": "Milwaukee Area Technical College",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["World Language"]
+  },
+  {
+    "courseName": "Public Speaking",
+    "courseCode": "COMM 220",
+    "equivalent": "COMM 111 - Public Speaking",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Communication B", "Social Science"]
+  },
+  {
+    "courseName": "Introduction to Sociology",
+    "courseCode": "SOC 101",
+    "equivalent": "SOC 101 - Introduction to Sociology",
+    "institution": "Madison Area Technical College",
+    "city": "Madison",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Social Science"]
+  },
+  {
+    "courseName": "Introduction to Philosophy",
+    "courseCode": "PHIL 101",
+    "equivalent": "elective",
+    "institution": "Milwaukee Area Technical College",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Humanities"]
+  },
+  {
+    "courseName": "Cultural Anthropology",
+    "courseCode": "ANTH 102",
+    "equivalent": "elective",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Ethnic Studies", "Social Science"]
+  },
+  {
+    "courseName": "Developmental Psychology",
+    "courseCode": "PSYC 210",
+    "equivalent": "PSYCH 210 - Developmental Psychology",
+    "institution": "Waukesha County Technical College",
+    "city": "Pewaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Social Science"]
+  },
+  {
+    "courseName": "Music Appreciation",
+    "courseCode": "MUSIC 101",
+    "equivalent": "elective",
+    "institution": "Madison Area Technical College",
+    "city": "Madison",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Humanities"]
+  },
+  {
+    "courseName": "Introduction to Astronomy",
+    "courseCode": "ASTRO 110",
+    "equivalent": "ASTRO 105 - Introduction to Astronomy",
+    "institution": "Milwaukee Area Technical College",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Natural Science"]
+  },
+  {
+    "courseName": "Bioinformatics",
+    "courseCode": "BIOL 200",
+    "equivalent": "elective",
+    "institution": "Fox Valley Technical College",
+    "city": "Appleton",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Natural Science", "Programming"]
+  },
+
+  {
+    "courseName": "Introduction to Philosophy",
+    "courseCode": "PHIL 101",
+    "equivalent": "PHILOS 101 - Intro to Philosophy",
+    "institution": "University of Minnesota",
+    "city": "Minneapolis",
+    "stateAbbrev": "MN",
+    "requirementsSatisfied": ["Humanities"]
+  },
+  {
+    "courseName": "World Civilizations I",
+    "courseCode": "HIST 110",
+    "equivalent": "HIST 201 - World Civilizations to 1500",
+    "institution": "University of Iowa",
+    "city": "Iowa City",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Social Science", "Humanities"]
+  },
+  {
+    "courseName": "English Composition",
+    "courseCode": "ENG 101",
+    "equivalent": "ENGL 101 - English Composition",
+    "institution": "Iowa State University",
+    "city": "Ames",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Communication A"]
+  },
+  {
+    "courseName": "Public Speaking",
+    "courseCode": "CMST 202",
+    "equivalent": "COMM 202 - Public Speaking",
+    "institution": "Purdue University",
+    "city": "West Lafayette",
+    "stateAbbrev": "IN",
+    "requirementsSatisfied": ["Communication B", "Social Science"]
+  },
+  {
+    "courseName": "Ethnic Studies",
+    "courseCode": "ETHN 220",
+    "equivalent": "ETHNIC 220 - Intro to Ethnic Studies",
+    "institution": "Indiana University Bloomington",
+    "city": "Bloomington",
+    "stateAbbrev": "IN",
+    "requirementsSatisfied": ["Ethnic", "Humanities"]
+  },
+  {
+    "courseName": "Spanish I",
+    "courseCode": "SPAN 101",
+    "equivalent": "SPANISH 101 - Beginning Spanish",
+    "institution": "Marquette University",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["World Language"]
+  },
+  {
+    "courseName": "American Literature",
+    "courseCode": "ENG 250",
+    "equivalent": "ENGL 250 - American Lit Survey",
+    "institution": "Northern Illinois University",
+    "city": "DeKalb",
+    "stateAbbrev": "IL",
+    "requirementsSatisfied": ["Literature", "Humanities"]
+  },
+  {
+    "courseName": "General Biology",
+    "courseCode": "BIOL 101",
+    "equivalent": "BIOLOGY 101 - General Biology",
+    "institution": "Michigan State University",
+    "city": "East Lansing",
+    "stateAbbrev": "MI",
+    "requirementsSatisfied": ["Biological Science", "Natural Science"]
+  },
+  {
+    "courseName": "General Chemistry",
+    "courseCode": "CHEM 103",
+    "equivalent": "CHEMISTRY 103 - General Chemistry I",
+    "institution": "University of Wisconsin-Milwaukee",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Physical Science", "Natural Science"]
+  },
+  {
+    "courseName": "Calculus I",
+    "courseCode": "MATH 171",
+    "equivalent": "CALC 171 - Calculus I",
+    "institution": "University of Minnesota",
+    "city": "Minneapolis",
+    "stateAbbrev": "MN",
+    "requirementsSatisfied": ["Basic Math and Stats"]
+  },
+  {
+    "courseName": "Introduction to Programming",
+    "courseCode": "CS 101",
+    "equivalent": "COMP SCI 101 - Intro to Programming",
+    "institution": "University of Iowa",
+    "city": "Iowa City",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Programming", "Basic Math and Stats"]
+  },
+  {
+    "courseName": "American Government",
+    "courseCode": "POLI 101",
+    "equivalent": "POL SCI 101 - American Government",
+    "institution": "Purdue University",
+    "city": "West Lafayette",
+    "stateAbbrev": "IN",
+    "requirementsSatisfied": ["Social Science"]
+  },
+  {
+    "courseName": "Creative Writing",
+    "courseCode": "ENGL 220",
+    "equivalent": "ENG 220 - Creative Writing",
+    "institution": "Iowa State University",
+    "city": "Ames",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Literature", "Humanities"]
+  },
+  {
+    "courseName": "Ethnic Literature",
+    "courseCode": "LIT 230",
+    "equivalent": "LITR 230 - Ethnic American Lit",
+    "institution": "Northern Illinois University",
+    "city": "DeKalb",
+    "stateAbbrev": "IL",
+    "requirementsSatisfied": ["Literature", "Ethnic"]
+  },
+  {
+    "courseName": "Introduction to Astronomy",
+    "courseCode": "ASTR 110",
+    "equivalent": "ASTRON 110 - Intro to Astronomy",
+    "institution": "University of Wisconsin-Platteville",
+    "city": "Platteville",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Natural Science", "Physical Science"]
+  },
+  {
+    "courseName": "Environmental Science",
+    "courseCode": "ENSC 101",
+    "equivalent": "ENV SCI 101 - Intro to Environmental Science",
+    "institution": "University of Minnesota",
+    "city": "Minneapolis",
+    "stateAbbrev": "MN",
+    "requirementsSatisfied": ["Natural Science"]
+  },
+  {
+    "courseName": "World History II",
+    "courseCode": "HIST 120",
+    "equivalent": "HIST 202 - World History since 1500",
+    "institution": "University of Iowa",
+    "city": "Iowa City",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Social Science", "Humanities"]
+  },
+  {
+    "courseName": "Introduction to Art History",
+    "courseCode": "ART 150",
+    "equivalent": "ARTHIST 150 - Art History Survey",
+    "institution": "Marquette University",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Humanities"]
+  },
+  {
+    "courseName": "Music Appreciation",
+    "courseCode": "MUS 101",
+    "equivalent": "MUSIC 101 - Music Appreciation",
+    "institution": "Indiana University Bloomington",
+    "city": "Bloomington",
+    "stateAbbrev": "IN",
+    "requirementsSatisfied": ["Humanities"]
+  },
+  {
+    "courseName": "Introduction to Psychology",
+    "courseCode": "PSY 100",
+    "equivalent": "PSYCH 100 - Intro to Psychology",
+    "institution": "Michigan State University",
+    "city": "East Lansing",
+    "stateAbbrev": "MI",
+    "requirementsSatisfied": ["Social Science"]
+  },
+  {
+    "courseName": "Introduction to Economics",
+    "courseCode": "ECON 101",
+    "equivalent": "ECON 101 - Principles of Economics",
+    "institution": "Purdue University",
+    "city": "West Lafayette",
+    "stateAbbrev": "IN",
+    "requirementsSatisfied": ["Social Science"]
+  },
+  {
+    "courseName": "Physics for Life Sciences",
+    "courseCode": "PHYS 210",
+    "equivalent": "PHYS 210 - Physics for Life Sciences",
+    "institution": "University of Wisconsin-Milwaukee",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Physical Science", "Biological Science"]
+  },
+  {
+    "courseName": "Organic Chemistry I",
+    "courseCode": "CHEM 201",
+    "equivalent": "CHEM 201 - Organic Chemistry I",
+    "institution": "University of Minnesota",
+    "city": "Minneapolis",
+    "stateAbbrev": "MN",
+    "requirementsSatisfied": ["Physical Science"]
+  },
+  {
+    "courseName": "Microeconomics",
+    "courseCode": "ECON 102",
+    "equivalent": "ECON 102 - Microeconomics",
+    "institution": "University of Iowa",
+    "city": "Iowa City",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Social Science"]
+  },
+  {
+    "courseName": "Shakespearean Drama",
+    "courseCode": "ENG 330",
+    "equivalent": "ENGL 330 - Shakespeare",
+    "institution": "Northern Illinois University",
+    "city": "DeKalb",
+    "stateAbbrev": "IL",
+    "requirementsSatisfied": ["Literature", "Humanities"]
+  },
+  {
+    "courseName": "Multicultural Communication",
+    "courseCode": "COMM 310",
+    "equivalent": "COMM 310 - Multicultural Comm",
+    "institution": "Marquette University",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Communication B", "Ethnic"]
+  },
+  {
+    "courseName": "Introduction to Data Science",
+    "courseCode": "DS 101",
+    "equivalent": "DATA SCI 101 - Intro to Data Science",
+    "institution": "Iowa State University",
+    "city": "Ames",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": ["Programming", "Basic Math and Stats"]
+  },
+  {
+    "courseName": "Survey of World Literature",
+    "courseCode": "LIT 210",
+    "equivalent": "LITR 210 - World Lit Survey",
+    "institution": "University of Wisconsin-Platteville",
+    "city": "Platteville",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": ["Literature", "Humanities"]
+  },
+  {
+    "courseName": "Ethical Communication in Society",
+    "courseCode": "COMM 303",
+    "equivalent": "JOURN 303 - Media and Society",
+    "institution": "University of Minnesota",
+    "city": "Minneapolis",
+    "stateAbbrev": "MN",
+    "requirementsSatisfied": [
+      "Communication B",
+      "Social Science",
+      "Humanities"
+    ]
+  },
+  {
+    "courseName": "Writing for Social Change",
+    "courseCode": "ENGL 310",
+    "equivalent": "ENGL 310 - Writing for Activism",
+    "institution": "University of Iowa",
+    "city": "Iowa City",
+    "stateAbbrev": "IA",
+    "requirementsSatisfied": [
+      "Communication B",
+      "Humanities",
+      "Literature"
+    ]
+  },
+  {
+    "courseName": "Global Ethics and Policy",
+    "courseCode": "PHIL 320",
+    "equivalent": "PHILOS 320 - Ethics & Public Policy",
+    "institution": "Marquette University",
+    "city": "Milwaukee",
+    "stateAbbrev": "WI",
+    "requirementsSatisfied": [
+      "Ethnic",
+      "Social Science",
+      "Humanities"
+    ]
+  },
+  {
+    "courseName": "Statistics for the Natural Sciences",
+    "courseCode": "STAT 250",
+    "equivalent": "STAT 250 - Biostatistics",
+    "institution": "Michigan State University",
+    "city": "East Lansing",
+    "stateAbbrev": "MI",
+    "requirementsSatisfied": [
+      "Natural Science",
+      "Basic Math and Stats",
+      "Biological Science"
+    ]
+  }
+]

@@ -13,6 +13,15 @@ export default function BadgerTransNavBar(props) {
             <Nav.Link as={Link} to="/faq" style={{ color: "#E7E7E7" }}>FAQ</Nav.Link>
         </Nav>
 
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="mx-auto"
+          style={{ color: "#E7E7E7", fontWeight: "bold", fontSize: "1.25rem" }}
+        >
+          Badger Breadth Transferology
+        </Navbar.Brand>
+
         <Nav className="ms-auto">
             <Nav.Link as={Link} to="/" style={{ color: "#E7E7E7" }}>Home Page</Nav.Link>
             <Nav.Link as={Link} to="/log-in" style={{ color: "#E7E7E7" }}>Log In</Nav.Link>

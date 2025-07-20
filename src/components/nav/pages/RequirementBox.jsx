@@ -19,10 +19,11 @@ const requirements = [
 const tipItems = [
     'Communication A',
     'World Language',
+    'Literature',
     'Natural Science',
 ];
 
-export default function RequirementsBox() {
+export default function RequirementsBox(props) {
     const [selectedReqs, setSelectedReqs] = useState([]);
     const [matchType, setMatchType] = useState('all');
 
@@ -37,11 +38,16 @@ export default function RequirementsBox() {
     const handleClear = () => {
         setSelectedReqs([]);
         setMatchType('all');
+        if (props.onClear) props.onClear();
     };
 
-    //No implement yet
-    const handleSearch = () =>{};
-
+    const handleSearch = () => {
+        if (selectedReqs.length === 0) {
+            alert('Please select at least one requirement.');
+            return;
+        }
+        props.onSearch(selectedReqs, matchType);
+    };
 
 
     return (
@@ -68,19 +74,40 @@ export default function RequirementsBox() {
                         <input type="checkbox" checked={selectedReqs.includes(req)} onChange={() => toggleReq(req)} style={{ marginRight: 8 }} />
                         <span style={{ flex: 1 }}>{req}</span>
                         {tipItems.includes(req) && (
-                            <span style={{
-                                width: '14px',
-                                height: '14px',
-                                lineHeight: '14px',
-                                textAlign: 'center',
-                                border: '1px solid #aaa',
-                                borderRadius: '50%',
-                                fontSize: '10px',
-                                color: '#555',
-                                userSelect: 'none',
-                            }}>
+                            <Button
+                                variant="outline-secondary"
+                                size="sm"
+                                style={{
+                                    padding: 0,
+                                    minWidth: 20,
+                                    width: 20,
+                                    height: 20,
+                                    lineHeight: '20px',
+                                    fontSize: 10,
+                                    textAlign: 'center',
+                                    borderRadius: '50%',
+                                    border: '1px solid #aaa',
+                                    marginLeft: 4,
+                                }}
+                                onClick={() => {
+                                    {
+                                        if (req === 'Communication A') {
+                                            alert('If you are an international student or English is not your primary language, please talk with your advisor and check your DARS report. You may have to take or transfer credit for ESL 118 to graduate.')
+                                        }
+                                        else if (req === 'World Language') {
+                                            alert('Please read https://languages.wisc.edu/policy/ and talk with your advisor to make decisions')
+                                        }
+                                        else if (req === 'Literature') {
+                                            alert('Literature credits can also be applied toward humanities requirements')
+                                        }
+                                        else {
+                                            alert('Generally, Biological Science and Physical Science can also fulfill Natural Science requirements')
+                                        }
+                                    }
+                                }}
+                            >
                                 i
-                            </span>
+                            </Button>
                         )}
 
                     </div>
@@ -120,12 +147,7 @@ export default function RequirementsBox() {
                             />
                             {type === 'all' ? 'Match all (AND)' : 'Match any (OR)'}
                         </label>
-                        <span style={{
-                            width: 14,
-                            height: 14,
-                            border: '1px solid #aaa',
-                            borderRadius: '50%',
-                        }} />
+
                     </div>
                 ))}
             </fieldset>
