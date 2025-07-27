@@ -4,25 +4,30 @@ import RequirementBox from './RequirementBox';
 
 export default function HomePage() {
 
-    const [courses, setCourses] = useState([]);
-    const [filteredCourses, setFilteredCourses] = useState([]);
-    const [hasSearched, setHasSearched] = useState(false);
-    const [matchType, setMatchType] = useState('all');
+    const [courses, setCourses] = useState([]); //fetch course data
+    const [filteredCourses, setFilteredCourses] = useState([]); //filterd courses after clicking on 'search'
 
-    const [selectedSchoolIdx, setSelectedSchoolIdx] = useState(null);
-    const [selectedBreadthIdx, setSelectedBreadthIdx] = useState(null);
+    const [hasSearched, setHasSearched] = useState(false); //identify whether 'search' button is clicked
+    const [matchType, setMatchType] = useState('all'); //initial matching type
+
+    const [selectedSchoolIdx, setSelectedSchoolIdx] = useState(null); //first round search; returns school
+    const [selectedBreadthIdx, setSelectedBreadthIdx] = useState(null); //second round search for 'OR' requirement; returns fulfilled breadth
+
+    const [expandedCourses, setExpandedCourses] = useState({}); //third round search for 'OR'; second round search for 'AND'
+
+
 
     //Read data
     useEffect(() => {
         const base = import.meta.env.BASE_URL;
 
-        fetch(`${base}Data/CoursesData.json`)
+        fetch(`${base}Data/courses_with_course_descriptions.json`)
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
+                //console.log(data);
                 setCourses(data);
             })
     }, [])
@@ -34,6 +39,7 @@ export default function HomePage() {
         setFilteredCourses([]);
         setSelectedSchoolIdx(null);
         setSelectedBreadthIdx(null);
+        setExpandedCourses({});
 
         setMatchType(matchtype);
 
@@ -52,6 +58,7 @@ export default function HomePage() {
         setMatchType('all');
         setSelectedSchoolIdx(null);
         setSelectedBreadthIdx(null);
+        setExpandedCourses({});
     }
 
     //Group by school
@@ -76,14 +83,26 @@ export default function HomePage() {
 
     }, [filteredCourses]);
 
+    // console.log(groupedBySchool);
+
+    //Expand course details
+    const toggleExpand = (idx) => {
+        setExpandedCourses(prev => ({
+            ...prev,
+            [idx]: !prev[idx]
+        }));
+    };
+
     return (
         <div>
             <Container fluid className="mt-4">
                 <Row>
+                    {/* Requirement box part */}
                     <Col sm={4} style={{ marginTop: '-20px' }}>
                         <RequirementBox onSearch={handleSerch} onClear={handleClear} />
                     </Col>
 
+                    {/* result part */}
                     <Col sm={8}>
                         <div style={{
                             backgroundColor: '#f5f5f5',
@@ -109,9 +128,10 @@ export default function HomePage() {
                                 <p>No matching schools found.</p>
                             )}
 
+                            {/* First round of search; returns a list of schools */}
                             {hasSearched && groupedBySchool.length > 0 && selectedSchoolIdx === null && (
                                 groupedBySchool.map((school, idx) => (
-                                    <Card key={idx} onClick={() => setSelectedSchoolIdx(idx)} border="success" style={{ marginBottom: 12 }}>
+                                    <Card key={idx} onClick={() => setSelectedSchoolIdx(idx)} border="success" style={{ marginBottom: 12, cursor: 'pointer' }}>
                                         <Card.Body>
                                             <Card.Title>{school.institution}</Card.Title>
                                             <Card.Subtitle className="mb-2 text-muted">
@@ -128,6 +148,7 @@ export default function HomePage() {
                             )
                             }
 
+                            {/* Second round of search for 'AND'; returns a list of courses */}
                             {hasSearched && selectedSchoolIdx !== null && matchType === 'all' && (
                                 <div>
                                     <Button
@@ -146,24 +167,37 @@ export default function HomePage() {
                                         requirement{groupedBySchool[selectedSchoolIdx].requirementsSatisfied.length > 1 ? 's' : ''}
                                     </p>
 
-                                    {groupedBySchool[selectedSchoolIdx].courses.map((course) => (
-                                        <Card key={course.institution + course.courseCode} border="success" style={{ marginBottom: 12, cursor: 'pointer' }}>
+                                    {groupedBySchool[selectedSchoolIdx].courses.map((course, idx) => (
+                                        <Card key={idx} border="success" style={{ marginBottom: 12 }}>
+                                            <Button variant='success' size="sm" className="position-absolute top-0 end-0 m-2">Save</Button>
                                             <Card.Body>
                                                 <div><strong>Course number:</strong> {course.courseCode}</div>
                                                 <div><strong>Equivalent:</strong> {course.equivalent}</div>
                                                 <div>
-                                                   <strong>Fulfill:</strong> {course.requirementsSatisfied.join(', ')}
+                                                    <strong>Fulfill:</strong> {course.requirementsSatisfied.join(', ')}
                                                 </div>
 
+
                                             </Card.Body>
+                                            <Button variant='secondary' size="sm" onClick={() => toggleExpand(idx)}>{expandedCourses[idx] ? 'Hide Details' : 'View Details'}</Button>
+
+                                            {expandedCourses[idx] && (
+                                                <Card.Footer>
+                                                    <p><strong>Requirement(s) Satisfied:</strong> {course.requirementsSatisfied.join(', ')}<br />
+                                                        <strong>Link:</strong>{' '}<a href={course.link} target="_blank" rel="noopener noreferrer">{course.link}</a><br />
+                                                        <strong>Description:</strong> {course.shortDescription}<br />
+                                                        <strong>Credits:</strong> {course.credits}</p>
+                                                </Card.Footer>
+                                            )}
+
                                         </Card>
                                     ))}
-
 
                                 </div>
                             )
                             }
 
+                            {/* Second round search for 'OR'; returns a list of breadth requirements */}
                             {hasSearched && selectedSchoolIdx !== null && matchType !== 'all' && selectedBreadthIdx === null && (
                                 <div>
                                     <Button
@@ -191,6 +225,7 @@ export default function HomePage() {
                                 </div>
                             )}
 
+                            {/* Third round search for 'OR'; returns a list of courses  */}
                             {hasSearched && selectedSchoolIdx !== null && matchType !== 'all' && selectedBreadthIdx !== null && (
                                 (() => {
                                     const school = groupedBySchool[selectedSchoolIdx];
@@ -208,8 +243,9 @@ export default function HomePage() {
                                             </p>
 
                                             {coursesInBreadth.map((course, idx) => (
-                                                <Card key={idx} border='success' style={{ marginBottom: 12, cursor: 'pointer' }}>
+                                                <Card key={idx} border='success' style={{ marginBottom: 12 }}>
                                                     <Card.Body>
+                                                        <Button variant='success' size="sm" className="position-absolute top-0 end-0 m-2">Save</Button>
                                                         <div><strong>Course number:</strong> {course.courseCode}</div>
                                                         <div><strong>Equivalent:</strong> {course.equivalent}</div>
                                                         <div>
@@ -217,6 +253,15 @@ export default function HomePage() {
                                                             {course.requirementsSatisfied.join(', ')}
                                                         </div>
                                                     </Card.Body>
+                                                    <Button variant='secondary' size="sm" onClick={() => toggleExpand(idx)}>{expandedCourses[idx] ? 'Hide Details' : 'View Details'}</Button>
+                                                    {expandedCourses[idx] && (
+                                                        <Card.Footer>
+                                                            <p><strong>Requirement(s) Satisfied:</strong> {course.requirementsSatisfied.join(', ')}<br />
+                                                                <strong>Link:</strong>{' '}<a href={course.link} target="_blank" rel="noopener noreferrer">{course.link}</a><br />
+                                                                <strong>Description:</strong> {course.shortDescription}<br />
+                                                                <strong>Credits:</strong> {course.credits}</p>
+                                                        </Card.Footer>
+                                                    )}
                                                 </Card>
                                             ))}
 
@@ -224,9 +269,6 @@ export default function HomePage() {
                                     );
                                 })()
                             )}
-
-
-
 
                         </div>
                     </Col>

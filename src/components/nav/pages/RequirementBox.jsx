@@ -71,7 +71,7 @@ export default function RequirementsBox(props) {
             >
                 {requirements.map(req => (
                     <div key={req} style={{ display: 'flex', alignItems: 'center', marginBottom: 6 }}>
-                        <input type="checkbox" checked={selectedReqs.includes(req)} onChange={() => toggleReq(req)} style={{ marginRight: 8 }} />
+                        <input type="checkbox" checked={selectedReqs.includes(req)} onChange={() => toggleReq(req)} style={{ marginRight: 8, cursor: 'pointer' }} />
                         <span style={{ flex: 1 }}>{req}</span>
                         {tipItems.includes(req) && (
                             <Button
@@ -143,7 +143,7 @@ export default function RequirementsBox(props) {
                                 name="matchType"
                                 checked={matchType === type}
                                 onChange={() => setMatchType(type)}
-                                style={{ width: 16, height: 16, marginRight: 8 }}
+                                style={{ width: 16, height: 16, marginRight: 8, cursor: 'pointer' }}
                             />
                             {type === 'all' ? 'Match all (AND)' : 'Match any (OR)'}
                         </label>
