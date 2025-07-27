@@ -154,7 +154,7 @@ export default function HomePage() {
                                     <Button
                                         variant="outline-secondary"
                                         size="sm"
-                                        onClick={() => setSelectedSchoolIdx(null)}
+                                        onClick={() => {setSelectedSchoolIdx(null); setExpandedCourses({})}}
                                         className="mb-3"
                                     >
                                         ← Back to schools
@@ -234,7 +234,7 @@ export default function HomePage() {
 
                                     return (
                                         <div>
-                                            <Button variant='outline-secondary' size='sm' onClick={() => setSelectedBreadthIdx(null)} className="mb-3">
+                                            <Button variant='outline-secondary' size='sm' onClick={() => {setSelectedBreadthIdx(null); setExpandedCourses({})}} className="mb-3">
                                                 ← Back to breadth
                                             </Button>
 
