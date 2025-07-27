@@ -3,10 +3,13 @@ import React from "react";
 //import { HashRouter } from "react-router-dom";
 import BadgerTransNavBar  from "./nav/BadgerTransNavBar";
 import { Outlet } from "react-router";
+import { DataProvider } from './DataContext'
 
 
 export default function BadgerTransferology() {
   return <div>
+    <DataProvider>
+
     <BadgerTransNavBar />
     <div style={{
                 backgroundColor: "white", 
@@ -24,6 +27,8 @@ export default function BadgerTransferology() {
     <div style={{ margin: "1rem" }}>
       <Outlet /> 
     </div>
+    </DataProvider>
+    
   </div>
   
 }

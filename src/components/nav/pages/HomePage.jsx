@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo, useContext } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import RequirementBox from './RequirementBox';
+import { DataContext } from '../../DataContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomePage() {
 
-    const [courses, setCourses] = useState([]); //fetch course data
+    const { courses, error } = useContext(DataContext);
     const [filteredCourses, setFilteredCourses] = useState([]); //filterd courses after clicking on 'search'
 
     const [hasSearched, setHasSearched] = useState(false); //identify whether 'search' button is clicked
@@ -17,20 +19,7 @@ export default function HomePage() {
 
 
 
-    //Read data
-    useEffect(() => {
-        const base = import.meta.env.BASE_URL;
-
-        fetch(`${base}Data/courses_with_course_descriptions.json`)
-            .then((res) => {
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                return res.json();
-            })
-            .then((data) => {
-                //console.log(data);
-                setCourses(data);
-            })
-    }, [])
+ //   const navigate = useNavigate();
 
     //Handle search
     const handleSerch = (requirement, matchtype) => {
@@ -154,7 +143,7 @@ export default function HomePage() {
                                     <Button
                                         variant="outline-secondary"
                                         size="sm"
-                                        onClick={() => {setSelectedSchoolIdx(null); setExpandedCourses({})}}
+                                        onClick={() => { setSelectedSchoolIdx(null); setExpandedCourses({}) }}
                                         className="mb-3"
                                     >
                                         ← Back to schools
@@ -234,7 +223,7 @@ export default function HomePage() {
 
                                     return (
                                         <div>
-                                            <Button variant='outline-secondary' size='sm' onClick={() => {setSelectedBreadthIdx(null); setExpandedCourses({})}} className="mb-3">
+                                            <Button variant='outline-secondary' size='sm' onClick={() => { setSelectedBreadthIdx(null); setExpandedCourses({}) }} className="mb-3">
                                                 ← Back to breadth
                                             </Button>
 
