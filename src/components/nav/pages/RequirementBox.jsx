@@ -71,8 +71,9 @@ export default function RequirementsBox(props) {
             >
                 {requirements.map(req => (
                     <div key={req} style={{ display: 'flex', alignItems: 'center', marginBottom: 6 }}>
-                        <input type="checkbox" checked={selectedReqs.includes(req)} onChange={() => toggleReq(req)} style={{ marginRight: 8, cursor: 'pointer' }} />
-                        <span style={{ flex: 1 }}>{req}</span>
+                        <label style={{ display: 'flex', alignItems: 'center', flex: 1, cursor: 'pointer', margin: 0, }}>
+                            <input type="checkbox" checked={selectedReqs.includes(req)} onChange={() => toggleReq(req)} style={{ marginRight: 8, cursor: 'pointer' }} />
+                            <span style={{ flex: 1 }}>{req}</span></label>
                         {tipItems.includes(req) && (
                             <Button
                                 variant="outline-secondary"
