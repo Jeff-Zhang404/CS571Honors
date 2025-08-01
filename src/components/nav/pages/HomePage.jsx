@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import RequirementBox from './RequirementBox';
 import { DataContext } from '../../DataContext';
 import { useNavigate } from 'react-router-dom';
+import { useSavedCourseIds, makeKey } from './useSavedCourseIds';
 
 export default function HomePage() {
 
@@ -17,9 +18,13 @@ export default function HomePage() {
 
     const [expandedCourses, setExpandedCourses] = useState({}); //third round search for 'OR'; second round search for 'AND'
 
+    const { savedIds, saveId, isSaved } = useSavedCourseIds();
 
 
- //   const navigate = useNavigate();
+
+
+
+    //   const navigate = useNavigate();
 
     //Handle search
     const handleSerch = (requirement, matchtype) => {
@@ -81,6 +86,7 @@ export default function HomePage() {
             [idx]: !prev[idx]
         }));
     };
+
 
     return (
         <div>
@@ -158,7 +164,13 @@ export default function HomePage() {
 
                                     {groupedBySchool[selectedSchoolIdx].courses.map((course, idx) => (
                                         <Card key={idx} border="success" style={{ marginBottom: 12 }}>
-                                            <Button variant='success' size="sm" className="position-absolute top-0 end-0 m-2">Save</Button>
+                                            <Button variant='success' size="sm" className="position-absolute top-0 end-0 m-2" onClick={() => {
+                                                const key = makeKey(course);
+                                                saveId(key);
+                                            }}>Save</Button>
+                                            {isSaved(makeKey(course)) && (
+                                                <span style={{ marginLeft: 6, fontSize: 12 }}>✓ Saved</span>
+                                            )}
                                             <Card.Body>
                                                 <div><strong>Course number:</strong> {course.courseCode}</div>
                                                 <div><strong>Equivalent:</strong> {course.equivalent}</div>
@@ -234,7 +246,13 @@ export default function HomePage() {
                                             {coursesInBreadth.map((course, idx) => (
                                                 <Card key={idx} border='success' style={{ marginBottom: 12 }}>
                                                     <Card.Body>
-                                                        <Button variant='success' size="sm" className="position-absolute top-0 end-0 m-2">Save</Button>
+                                                        <Button variant='success' size="sm" className="position-absolute top-0 end-0 m-2" onClick={() => {
+                                                            const key = makeKey(course);
+                                                            saveId(key);
+                                                        }}>Save</Button>
+                                                        {isSaved(makeKey(course)) && (
+                                                            <span style={{ marginLeft: 6, fontSize: 12 }}>✓ Saved</span>
+                                                        )}
                                                         <div><strong>Course number:</strong> {course.courseCode}</div>
                                                         <div><strong>Equivalent:</strong> {course.equivalent}</div>
                                                         <div>
